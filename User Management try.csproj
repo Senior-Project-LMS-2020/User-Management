@@ -1,0 +1,256 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>User_Management_try</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20201015104254_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201015104254_InitialCreate.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+    <Folder Include="Utilities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Account\Login.cshtml" />
+    <None Include="Views\Account\Register.cshtml" />
+    <None Include="Views\Administration\AccessDenied.cshtml" />
+    <None Include="Views\Administration\CreateRole.cshtml" />
+    <None Include="Views\Administration\EditRole.cshtml" />
+    <None Include="Views\Administration\EditUser.cshtml" />
+    <None Include="Views\Administration\EditUsersInRole.cshtml" />
+    <None Include="Views\Administration\ListRoles.cshtml" />
+    <None Include="Views\Administration\ListUsers.cshtml" />
+    <None Include="Views\Administration\ManageUserClaims.cshtml" />
+    <None Include="Views\Administration\ManageUserRoles.cshtml" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-grid.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-grid.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-reboot.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap.css.map" />
+    <None Include="wwwroot\lib\bootstrap\css\bootstrap.min.css.map" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.bundle.js" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.bundle.js.map" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.bundle.min.js" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.js" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.js.map" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\lib\bootstrap\js\bootstrap.min.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\alert.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\alert.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\button.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\button.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\carousel.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\carousel.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\collapse.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\collapse.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\data.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\data.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\event-handler.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\event-handler.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\manipulator.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\manipulator.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\polyfill.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\polyfill.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\selector-engine.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dom\selector-engine.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dropdown.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\dropdown.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\modal.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\modal.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\popover.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\popover.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\scrollspy.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\scrollspy.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\tab.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\tab.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\toast.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\toast.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\dist\tooltip.js" />
+    <None Include="wwwroot\src\js\bootstrap\dist\tooltip.js.map" />
+    <None Include="wwwroot\src\js\bootstrap\src\alert.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\button.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\carousel.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\collapse.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\dom\data.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\dom\event-handler.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\dom\manipulator.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\dom\polyfill.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\dom\selector-engine.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\dropdown.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\modal.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\popover.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\scrollspy.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\tab.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\toast.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\tooltip.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\util\index.js" />
+    <None Include="wwwroot\src\js\bootstrap\src\util\sanitizer.js" />
+    <None Include="wwwroot\src\js\free\dropdown.js" />
+    <None Include="wwwroot\src\js\free\input.js" />
+    <None Include="wwwroot\src\js\free\ripple.js" />
+    <None Include="wwwroot\src\js\mdb.free.js" />
+    <None Include="wwwroot\src\js\mdb\dom\data.js" />
+    <None Include="wwwroot\src\js\mdb\dom\event-handler.js" />
+    <None Include="wwwroot\src\js\mdb\dom\manipulator.js" />
+    <None Include="wwwroot\src\js\mdb\dom\polyfill.js" />
+    <None Include="wwwroot\src\js\mdb\dom\selector-engine.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\handlers\click-rail.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\handlers\drag-thumb.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\handlers\keyboard.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\handlers\mouse-wheel.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\handlers\touch.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\index.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\lib\class-names.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\lib\css.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\lib\dom.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\lib\event-manager.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\lib\util.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\process-scroll-diff.js" />
+    <None Include="wwwroot\src\js\mdb\perfect-scrollbar\update-geometry.js" />
+    <None Include="wwwroot\src\js\mdb\util\focusTrap.js" />
+    <None Include="wwwroot\src\js\mdb\util\index.js" />
+    <None Include="wwwroot\src\js\mdb\util\keycodes.js" />
+    <None Include="wwwroot\src\js\mdb\util\sanitizer.js" />
+    <None Include="wwwroot\src\js\mdb\util\touch\index.js" />
+    <None Include="wwwroot\src\js\mdb\util\touch\swipe.js" />
+    <None Include="wwwroot\src\js\mdb\util\touch\touchUtil.js" />
+    <None Include="wwwroot\src\scss\bootstrap\bootstrap-grid.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\bootstrap-reboot.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\bootstrap-utilities.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\bootstrap.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_form-check.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_form-control.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_form-file.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_form-range.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_form-select.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_form-text.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_input-group.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_labels.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\forms\_validation.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_clearfix.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_colored-links.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_embed.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_position.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_screenreaders.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_stretched-link.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\helpers\_text-truncation.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_alert.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_border-radius.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_box-shadow.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_breakpoints.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_buttons.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_caret.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_clearfix.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_container.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_deprecate.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_forms.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_gradients.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_grid.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_image.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_list-group.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_lists.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_pagination.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_reset-text.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_resize.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_screen-reader.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_table-variants.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_text-truncate.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_transition.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\mixins\_utilities.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\utilities\_api.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\vendor\_rfs.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_alert.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_badge.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_breadcrumb.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_button-group.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_buttons.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_card.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_carousel.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_close.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_containers.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_dropdown.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_forms.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_functions.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_grid.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_helpers.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_images.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_list-group.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_mixins.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_modal.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_nav.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_navbar.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_pagination.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_popover.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_progress.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_reboot.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_root.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_spinners.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_tables.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_toasts.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_tooltip.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_transitions.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_type.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_utilities.scss" />
+    <None Include="wwwroot\src\scss\bootstrap\_variables.scss" />
+    <None Include="wwwroot\src\scss\custom\_styles.scss" />
+    <None Include="wwwroot\src\scss\custom\_variables.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_form-check.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_form-control.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_form-file.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_form-range.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_form-select.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_input-group.scss" />
+    <None Include="wwwroot\src\scss\free\forms\_validation.scss" />
+    <None Include="wwwroot\src\scss\free\mixins\_buttons.scss" />
+    <None Include="wwwroot\src\scss\free\mixins\_ripple.scss" />
+    <None Include="wwwroot\src\scss\free\modules\_buttons.scss" />
+    <None Include="wwwroot\src\scss\free\_alert.scss" />
+    <None Include="wwwroot\src\scss\free\_badge.scss" />
+    <None Include="wwwroot\src\scss\free\_breadcrumb.scss" />
+    <None Include="wwwroot\src\scss\free\_button-group.scss" />
+    <None Include="wwwroot\src\scss\free\_buttons.scss" />
+    <None Include="wwwroot\src\scss\free\_card.scss" />
+    <None Include="wwwroot\src\scss\free\_colors.scss" />
+    <None Include="wwwroot\src\scss\free\_dropdown.scss" />
+    <None Include="wwwroot\src\scss\free\_flag.scss" />
+    <None Include="wwwroot\src\scss\free\_functions.scss" />
+    <None Include="wwwroot\src\scss\free\_images.scss" />
+    <None Include="wwwroot\src\scss\free\_list-group.scss" />
+    <None Include="wwwroot\src\scss\free\_mixins.scss" />
+    <None Include="wwwroot\src\scss\free\_modal.scss" />
+    <None Include="wwwroot\src\scss\free\_nav.scss" />
+    <None Include="wwwroot\src\scss\free\_navbar.scss" />
+    <None Include="wwwroot\src\scss\free\_pagination.scss" />
+    <None Include="wwwroot\src\scss\free\_popover.scss" />
+    <None Include="wwwroot\src\scss\free\_progress.scss" />
+    <None Include="wwwroot\src\scss\free\_reboot.scss" />
+    <None Include="wwwroot\src\scss\free\_ripple.scss" />
+    <None Include="wwwroot\src\scss\free\_root.scss" />
+    <None Include="wwwroot\src\scss\free\_scrollspy.scss" />
+    <None Include="wwwroot\src\scss\free\_shadows.scss" />
+    <None Include="wwwroot\src\scss\free\_tables.scss" />
+    <None Include="wwwroot\src\scss\free\_toasts.scss" />
+    <None Include="wwwroot\src\scss\free\_tooltip.scss" />
+    <None Include="wwwroot\src\scss\free\_type.scss" />
+    <None Include="wwwroot\src\scss\free\_variables.scss" />
+    <None Include="wwwroot\src\scss\mdb.core.scss" />
+    <None Include="wwwroot\src\scss\mdb.free.scss" />
+  </ItemGroup>
+
+</Project>
