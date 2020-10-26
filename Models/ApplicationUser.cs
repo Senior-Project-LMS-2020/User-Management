@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 using User_Management_try.Data;
@@ -11,54 +12,43 @@ namespace User_Management_try.Models
     public class ApplicationUser : IdentityUser
     {
         [Required]
-        public string FirstName { get; set; }
+        public virtual string FirstName { get; set; }
 
         [Required]
-        public string LastName { get; set; }
+        public virtual string LastName { get; set; }
 
-
-        private readonly ApplicationDbContext context;
-
-        public ApplicationUser(ApplicationDbContext _context)
-        {
-            context = _context;
-        }
-        public ApplicationUser Add(ApplicationUser user)
-        {
-            context.ApplicationUsers.Add(user);
-            context.SaveChanges();
-            return user;
-        }
-
-        public ApplicationUser Delete(int id)
-        {
-            ApplicationUser user = context.ApplicationUsers.Find(id);
-            if (user != null)
-            {
-                context.ApplicationUsers.Remove(user);
-                context.SaveChanges();
-
-            }
-            return user;
-        }
-
-        public IEnumerable<ApplicationUser> GetAllMovie()
-        {
-            return context.ApplicationUsers;
-        }
-
-        public ApplicationUser GetUser(int Id)
-        {
-            return context.ApplicationUsers.Find(Id);
-        }
-
-        public ApplicationUser Update(ApplicationUser userChanges)
-        {
-            var user = context.ApplicationUsers.Attach(userChanges);
-            user.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
-            context.SaveChanges();
-            return userChanges;
-        }
     }
 
+    public class Administrator :ApplicationUser
+    {
+        public ApplicationUser User { get; set; }
+
+    }
+
+    public class Instructor : ApplicationUser
+    {
+
+        public ICollection<InstructorCourse> InstructorCourse { get; set; }
+
+        public int DepartementId { get; set; }
+        public Departement Departement { get; set; }
+    }
+
+    public class Student :ApplicationUser
+    {
+
+        public string StudentIdentification { get; set; }
+
+        public ICollection<StudentCourse> StudentCourses { get; set; }
+
+
+        public Batch Batch { get; set; }
+
+        public Gender Gender { get; set; }
+    }
+
+    public enum Gender
+    {
+        Male, Female
+    }
 }

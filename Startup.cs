@@ -28,7 +28,7 @@ namespace User_Management_try
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            services.AddIdentity<ApplicationUser,IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequireLowercase = false;

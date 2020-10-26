@@ -7,24 +7,27 @@ using System.Threading.Tasks;
 
 namespace User_Management_try.Models
 {
-    public class UserViewModel
+    public class UserViewModel :ApplicationUser
     {
         [Required]
+        public override string FirstName { get; set; }
+
+        [Required]
+        public override string LastName { get; set; }
+
+
+        [Required]
         [EmailAddress]
-        public string Email { get; set; }
+        public override string Email { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        [Required]
-        [DataType(DataType.Password)]
-        [Display(Name ="Confirm passwod")]
-        [Compare("Password",ErrorMessage ="password and conformation password dont match.")]
-        public string ConfirmPassword { get; set; }
     }
     public class StudentViewModel : UserViewModel
     {
+        public string StudentIdentification { get; set; }
+
         public Gender Gender { get; set; }
     }
 

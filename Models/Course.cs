@@ -18,11 +18,12 @@ namespace User_Management_try.Models
         public string CourseCode { get; set; }
 
         [Required]
-        [Display(Name = "Course Name")]
-        public string CourseName { get; set; }
+        [Display(Name = "Title")]
+        public string TItle { get; set; }
 
         [Required]
         [Display(Name = "Credit Hour")]
+        [Range(0, 10)]
         public int CreditHour { get; set; }
 
         [Display(Name = "Course Description")]
@@ -38,9 +39,13 @@ namespace User_Management_try.Models
 
         public ICollection<InstructorCourse> InstructorCourses { get; set; }
 
+        public ICollection<BatchCourse> BatchCourses { get; set; }
 
+        public Departement Departement { get; set; }
 
         public List<Course> Prerequisite { get; set; }
+
+        public ICollection<Term> Terms { get; set; }
         // public ICollection<Instructor> Instructors { get; set; }
         // public ICollection<Resource> resources { get; set; }
         // public ICollection<Exam> Exams { get; set; }
@@ -52,25 +57,33 @@ namespace User_Management_try.Models
 
     public class StudentCourse
     {
-        public int StudentId { get; set; }
+        public Guid StudentId { get; set; }
         public Student Student { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
-
-
         public DateTime EnrollmentDate { get; set; }
 
-        public CourseStatus  CourseStatus { get; set; }
     }
-    public enum CourseStatus{
-        completed, Incomplete
-     }
+  
 
    public class InstructorCourse
     {
-        public int InstructorId { get; set; }
+        public Guid InstructorId { get; set; }
         public Instructor Instructor { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
     }
+
+    public class BatchCourse
+    {
+        public int BatchId { get; set; }
+        public Batch Batch { get; set; }
+        public int CourseId { get; set; }
+        public Course Course { get; set; }
+
+        public CourseStatus CourseStatus { get; set; }
+    }  
+    public enum CourseStatus{
+        completed, Inprogress, Incomplete
+     }
 }
